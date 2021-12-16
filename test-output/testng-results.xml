@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[Driver Closed After Testing]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="15940" started-at="2021-12-16T13:31:54Z" finished-at="2021-12-16T13:32:10Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="15940" started-at="2021-12-16T13:31:54Z" finished-at="2021-12-16T13:32:10Z">
+      <class name="com.selenium.functionalTest.LoginTestCase">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.selenium.functionalTest.LoginTestCase@4b952a2d]" name="beforeMethod" is-config="true" duration-ms="468" started-at="2021-12-16T19:01:54Z" finished-at="2021-12-16T19:01:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="loginTestCase()[pri:0, instance:com.selenium.functionalTest.LoginTestCase@4b952a2d]" name="loginTestCase" duration-ms="14723" started-at="2021-12-16T19:01:55Z" finished-at="2021-12-16T19:02:09Z">
+          <reporter-output>
+            <line>
+              <![CDATA[Driver Closed After Testing]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginTestCase -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.selenium.functionalTest.LoginTestCase@4b952a2d]" name="tearDown" is-config="true" duration-ms="734" started-at="2021-12-16T19:02:09Z" finished-at="2021-12-16T19:02:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.selenium.functionalTest.LoginTestCase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ Listener Suite]">
+  <listeners>
+    <listener class-name="com.selenium.utilities.Listeners"/>
+  </listeners>
+  <test name="Listener Testing(failed)">
+    <classes>
+      <class name="com.selenium.functionalTest.InvalidLoginTestCase">
+        <methods>
+          <include name="tearDown"/>
+          <include name="invalidLoginTestCase"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.selenium.functionalTest.InvalidLoginTestCase -->
+      <class name="com.selenium.functionalTest.AddEmptyClassTestCase">
+        <methods>
+          <include name="tearDown"/>
+          <include name="emptyClass"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- com.selenium.functionalTest.AddEmptyClassTestCase -->
+    </classes>
+  </test> <!-- Listener Testing(failed) -->
+</suite> <!-- Failed suite [ Listener Suite] -->

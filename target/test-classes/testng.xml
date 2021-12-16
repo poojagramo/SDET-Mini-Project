@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name=" Listener Suite" parallel="false">
+	<listeners>
+		<listener class-name = "com.selenium.utilities.Listeners" >
+		</listener>
+	</listeners>
+  <test name="Listener Testing">
+    <classes>
+			 <class name="com.selenium.functionalTest.InvalidLoginTestCase"/>
+			 <class name="com.selenium.functionalTest.AddEmptyClassTestCase"/>
+            
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
