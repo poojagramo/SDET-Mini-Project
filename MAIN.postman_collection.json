@@ -1,0 +1,3669 @@
+{
+	"info": {
+		"_postman_id": "08c1d562-b4e8-4902-8fd5-d5840bf31489",
+		"name": "MAIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "01_Login with Admin valid Username & Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"First Name as Sameer\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.First_Name).to.eql(\"Sameer\");\r",
+									"});\r",
+									"\r",
+									"var schema = \r",
+									"    {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"Message\",\r",
+									"        \"First_Name\",\r",
+									"        \"Last_Name\",\r",
+									"        \"User Type\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"Message\": {\r",
+									"            \"$id\": \"#/properties/Message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Message schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"First_Name\": {\r",
+									"            \"$id\": \"#/properties/First_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The First_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Last_Name\": {\r",
+									"            \"$id\": \"#/properties/Last_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Last_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"User Type\": {\r",
+									"            \"$id\": \"#/properties/User%20Type\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The User Type schema\",\r",
+									"            \"default\": \"\"\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{admin_Username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{admin_Password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_Login With Manager Credentials",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"First Name as Pooja\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.First_Name).to.eql(\"Pooja\");\r",
+									"    pm.expect(jsonData.Last_Name).to.eql(\"Gramopadhye\");\r",
+									"});\r",
+									"var schema = \r",
+									"    {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"Message\",\r",
+									"        \"First_Name\",\r",
+									"        \"Last_Name\",\r",
+									"        \"User Type\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"Message\": {\r",
+									"            \"$id\": \"#/properties/Message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Message schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"First_Name\": {\r",
+									"            \"$id\": \"#/properties/First_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The First_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Last_Name\": {\r",
+									"            \"$id\": \"#/properties/Last_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Last_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"User Type\": {\r",
+									"            \"$id\": \"#/properties/User%20Type\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The User Type schema\",\r",
+									"            \"default\": \"\"\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{Manag_Username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{Manag_Password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03_Login with invalid Username & valid Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is  401 Unauthorized\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+									"    \"default\": {},\r",
+									"    \"examples\": [\r",
+									"        {\r",
+									"            \"message\": \"Invalid username or Password\"\r",
+									"        }\r",
+									"    ],\r",
+									"    \"required\": [\r",
+									"        \"message\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"message\": {\r",
+									"            \"$id\": \"#/properties/message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The message schema\",\r",
+									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+									"            \"default\": \"\",\r",
+									"            \"examples\": [\r",
+									"                \"Invalid username or Password\"\r",
+									"            ]\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{admin_Username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "chandan",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "04_Login with valid Username and empty password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Empty Password\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Password cannot be empty\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{Manag_Username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "05_Login with blank Username and Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Username cannot be empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Username cannot be empty\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "06_Login with Username and blank Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Password cannot be empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Password cannot be empty\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{account_Username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "07_Login with Accounts valid Username & Password Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"First Name as Rohit\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.First_Name).to.eql(\"Rohit\");\r",
+									"});\r",
+									"var schema = \r",
+									"    {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"Message\",\r",
+									"        \"First_Name\",\r",
+									"        \"Last_Name\",\r",
+									"        \"User Type\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"Message\": {\r",
+									"            \"$id\": \"#/properties/Message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Message schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"First_Name\": {\r",
+									"            \"$id\": \"#/properties/First_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The First_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Last_Name\": {\r",
+									"            \"$id\": \"#/properties/Last_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Last_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"User Type\": {\r",
+									"            \"$id\": \"#/properties/User%20Type\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The User Type schema\",\r",
+									"            \"default\": \"\"\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "{{account_Username}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "{{account_Password}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/login.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login.php"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 20]);",
+							"});",
+							"pm.test(\"Logged in\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Login Successful\");",
+							"});",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Ok\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users In the Database",
+			"item": [
+				{
+					"name": "08_ Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"FIRST_NAME of 2 Person is Pooja\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[2].FIRST_NAME).to.eql(\"Pooja\");\r",
+									"    pm.expect(jsonData[2].LAST_NAME).to.eql(\"Gramopadhye\");\r",
+									"    pm.expect(jsonData[2].USER_TYPE).to.eql(\"MANAGEMENT\");\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"USER_ID\",\r",
+									"                \"FIRST_NAME\",\r",
+									"                \"LAST_NAME\",\r",
+									"                \"USER_TYPE\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"FIRST_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/FIRST_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The FIRST_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LAST_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LAST_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LAST_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_TYPE\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_TYPE\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_TYPE schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/viewUsers.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewUsers.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "09_Get User using user id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"FIRST_NAME of Person Should Be Rohit\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].FIRST_NAME).to.eql(\"Rohit\");\r",
+									"    pm.expect(jsonData[0].LAST_NAME).to.eql(\"Singh\");\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"USER_ID\",\r",
+									"                \"FIRST_NAME\",\r",
+									"                \"LAST_NAME\",\r",
+									"                \"USER_TYPE\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"FIRST_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/FIRST_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The FIRST_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LAST_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LAST_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LAST_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_TYPE\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_TYPE\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_TYPE schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewUsers.php?q=rohit",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewUsers.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "rohit"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10_ Get user using invalid id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"No user Found\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"No user Found\");\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"Message\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"Message\": {\r",
+									"            \"$id\": \"#/properties/Message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Message schema\",\r",
+									"            \"default\": \"\"\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid for Invalid id', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewUsers.php?q=nilesh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewUsers.php"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "nilesh"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "11_Get User using partial characters of user id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"USER_ID\",\r",
+									"                \"FIRST_NAME\",\r",
+									"                \"LAST_NAME\",\r",
+									"                \"USER_TYPE\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"FIRST_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/FIRST_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The FIRST_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LAST_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LAST_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LAST_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_TYPE\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_TYPE\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_TYPE schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewUsers.php?q=ra",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewUsers.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "q",
+									"value": "ra"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Success\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"USER_ID\");",
+							"});",
+							"pm.test(\"Successful Get request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200]);",
+							"});",
+							"pm.test(\"Ok\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "12_ Add User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"User Sucessfully added\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"User Sucessfully added\");\r",
+									"});\r",
+									"pm.test(\"Created\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "{{userId}}",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "{{firstName}}",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "{{lastName}}",
+									"type": "text"
+								},
+								{
+									"key": "userType",
+									"value": "{{userType}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/addUser.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addUser.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "13_ Add User Using Empty UserId Field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 206 Partial Content \", function () {\r",
+									"    pm.response.to.have.status(206);\r",
+									"});\r",
+									"pm.test(\"User Sucessfully added\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"User Sucessfully added\");\r",
+									"});\r",
+									"pm.test(\"Created\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "{{firstName}}",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "{{lastName}}",
+									"type": "text"
+								},
+								{
+									"key": "userType",
+									"value": "{{userType}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/addUser.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addUser.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "14_ Add User Using Empty Fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Invalid User\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Invalid userId\");\r",
+									"});\r",
+									"pm.test(\"User Sucessfully added\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"User Sucessfully added\");\r",
+									"});\r",
+									"pm.test(\"Created\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "userType",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/addUser.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addUser.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "15_ Add User using Duplicate User id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User Id already exists\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"User Id already exists\");\r",
+									"});\r",
+									"pm.test(\"Ok\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "anshuman_s",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Anshuman",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Singh",
+									"type": "text"
+								},
+								{
+									"key": "userType",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/addUser.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"addUser.php"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.collectionVariables.set(\"userId\", \"Rajat\");",
+							"pm.collectionVariables.set(\"firstName\", \"Rajat\");",
+							"pm.collectionVariables.set(\"lastName\", \"Singh\");",
+							"pm.collectionVariables.set(\"userType\", \"2\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"var schema = {",
+							"    \"$schema\": \"http://json-schema.org/draft-06/schema\",",
+							"    \"$id\": \"http://example.com/example.json\",",
+							"    \"type\": \"object\",",
+							"    \"title\": \"The root schema\",",
+							"    \"default\": {},",
+							"    \"required\": [",
+							"        \"Message\"",
+							"    ],",
+							"    \"properties\": {",
+							"        \"Message\": {",
+							"            \"$id\": \"#/properties/Message\",",
+							"            \"type\": \"string\",",
+							"            \"title\": \"The Message schema\",",
+							"            \"default\": \"\"",
+							"        }",
+							"    },",
+							"    \"additionalProperties\": false",
+							"};",
+							"",
+							"pm.test('Schema is valid', function () {",
+							"    var result = tv4.validateResult(pm.response.json(),schema);",
+							"    if(!result.valid){",
+							"        console.log(result);",
+							"    }",
+							"    pm.expect(result.valid).to.be.true;",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Change Password",
+			"item": [
+				{
+					"name": "16_Change Password With Incorrect Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "{{userId}}",
+									"type": "text"
+								},
+								{
+									"key": "currentPassword",
+									"value": "Rajat@12",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "{{newPassword}}",
+									"type": "text"
+								},
+								{
+									"key": "repeatPassword",
+									"value": "{{repeatPassword}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/changePassword.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"changePassword.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "17_Change Password With Mismatch in New Password and repeat password field",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "{{userId}}",
+									"type": "text"
+								},
+								{
+									"key": "currentPassword",
+									"value": "{{currentPassword}}",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "Rajat@12",
+									"type": "text"
+								},
+								{
+									"key": "repeatPassword",
+									"value": "Rajat@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/changePassword.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"changePassword.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "18_Change Password With Valid Fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "{{userId}}",
+									"type": "text"
+								},
+								{
+									"key": "currentPassword",
+									"value": "{{currentPassword}}",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "{{newPassword}}",
+									"type": "text"
+								},
+								{
+									"key": "repeatPassword",
+									"value": "{{repeatPassword}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/changePassword.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"changePassword.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "19_Change Password With Empty Fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "currentPassword",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "repeatPassword",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/changePassword.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"changePassword.php"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.collectionVariables.set(\"userId\", \"Rajat\");",
+							"pm.collectionVariables.set(\"currentPassword\", \"Rajat@123\");",
+							"pm.collectionVariables.set(\"newPassword\", \"Rajat@1234\");",
+							"pm.collectionVariables.set(\"repeatPassword\", \"Rajat@1234\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"OK\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"pm.test(\"Password successfully updated\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Password successfully updated\");",
+							"});",
+							"pm.test(\"Incorrect current password\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Incorrect current password\");",
+							"});",
+							"pm.test(\"The two password fields didn't match.\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"The two password fields didn't match.\");",
+							"});",
+							"var schema ={",
+							"    \"$schema\": \"http://json-schema.org/draft-06/schema\",",
+							"    \"$id\": \"http://example.com/example.json\",",
+							"    \"type\": \"object\",",
+							"    \"title\": \"The root schema\",",
+							"    \"default\": {},",
+							"    \"required\": [",
+							"        \"message\"",
+							"    ],",
+							"    \"properties\": {",
+							"        \"message\": {",
+							"            \"$id\": \"#/properties/message\",",
+							"            \"type\": \"string\",",
+							"            \"title\": \"The message schema\",",
+							"            \"default\": \"\"",
+							"        }",
+							"    }",
+							"};",
+							"",
+							"pm.test('Schema is valid', function () {",
+							"    var result = tv4.validateResult(pm.response.json(),schema);",
+							"    if(!result.valid){",
+							"        console.log(result);",
+							"    }",
+							"    pm.expect(result.valid).to.be.true;",
+							"});",
+							"pm.test(\"No User Found\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"No user Found\");",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"item": [
+				{
+					"name": "20_Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/deleteUser.php?userId=Rajat",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deleteUser.php"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "Rajat"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "21_Delete User with Invalid User Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/deleteUser.php?userId=Akshay",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deleteUser.php"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "Akshay"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "22_Delete User with Empty User Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/deleteUser.php?userId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deleteUser.php"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"User Sucessfully Deleted\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"User Sucessfully Deleted\");",
+							"});",
+							"pm.test(\"Ok\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"var schema = {",
+							"    \"$schema\": \"http://json-schema.org/draft-06/schema\",",
+							"    \"$id\": \"http://example.com/example.json\",",
+							"    \"type\": \"object\",",
+							"    \"title\": \"The root schema\",",
+							"    \"default\": {},",
+							"    \"required\": [",
+							"        \"Message\"",
+							"    ],",
+							"    \"properties\": {",
+							"        \"Message\": {",
+							"            \"$id\": \"#/properties/Message\",",
+							"            \"type\": \"string\",",
+							"            \"title\": \"The Message schema\",",
+							"            \"default\": \"\"",
+							"        }",
+							"    },",
+							"    \"additionalProperties\": false",
+							"};",
+							"",
+							"pm.test('Schema is valid', function () {",
+							"    var result = tv4.validateResult(pm.response.json(),schema);",
+							"    if(!result.valid){",
+							"        console.log(result);",
+							"    }",
+							"    pm.expect(result.valid).to.be.true;",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Logs",
+			"item": [
+				{
+					"name": "23_View Logs Of all Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\",\r",
+									"        \"1\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"LOG_ID\",\r",
+									"                \"USER_ID\",\r",
+									"                \"LOG_IN_TIME\",\r",
+									"                \"LOG_OUT_TIME\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"LOG_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_IN_TIME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_IN_TIME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_IN_TIME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_OUT_TIME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_OUT_TIME\",\r",
+									"                    \"type\": \"null\",\r",
+									"                    \"title\": \"The LOG_OUT_TIME schema\",\r",
+									"                    \"default\": null\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        },\r",
+									"        \"1\": {\r",
+									"            \"$id\": \"#/properties/1\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 1 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"LOG_ID\",\r",
+									"                \"USER_ID\",\r",
+									"                \"LOG_IN_TIME\",\r",
+									"                \"LOG_OUT_TIME\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"LOG_ID\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_IN_TIME\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_IN_TIME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_IN_TIME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_OUT_TIME\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_OUT_TIME\",\r",
+									"                    \"type\": \"null\",\r",
+									"                    \"title\": \"The LOG_OUT_TIME schema\",\r",
+									"                    \"default\": null\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}/viewLogs.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewLogs.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "24_View Logs Of Particular User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"USER_ID of Person Should be Sameer\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].USER_ID).to.eql(\"sameer_r\");\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\",\r",
+									"        \"1\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"LOG_ID\",\r",
+									"                \"USER_ID\",\r",
+									"                \"LOG_IN_TIME\",\r",
+									"                \"LOG_OUT_TIME\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"LOG_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_IN_TIME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_IN_TIME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_IN_TIME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_OUT_TIME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_OUT_TIME\",\r",
+									"                    \"type\": \"null\",\r",
+									"                    \"title\": \"The LOG_OUT_TIME schema\",\r",
+									"                    \"default\": null\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        },\r",
+									"        \"1\": {\r",
+									"            \"$id\": \"#/properties/1\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 1 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"LOG_ID\",\r",
+									"                \"USER_ID\",\r",
+									"                \"LOG_IN_TIME\",\r",
+									"                \"LOG_OUT_TIME\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"LOG_ID\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_IN_TIME\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_IN_TIME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_IN_TIME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_OUT_TIME\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_OUT_TIME\",\r",
+									"                    \"type\": \"null\",\r",
+									"                    \"title\": \"The LOG_OUT_TIME schema\",\r",
+									"                    \"default\": null\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewLogs.php?id=Sameer",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewLogs.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "Sameer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "25_View Log For Non-Existing User ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"No User Found\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"No user Found\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewLogs.php?id=payal",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewLogs.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "payal"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "26_View Log By Inputting Partial User ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\",\r",
+									"        \"1\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"LOG_ID\",\r",
+									"                \"USER_ID\",\r",
+									"                \"LOG_IN_TIME\",\r",
+									"                \"LOG_OUT_TIME\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"LOG_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_IN_TIME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_IN_TIME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_IN_TIME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_OUT_TIME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/LOG_OUT_TIME\",\r",
+									"                    \"type\": \"null\",\r",
+									"                    \"title\": \"The LOG_OUT_TIME schema\",\r",
+									"                    \"default\": null\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        },\r",
+									"        \"1\": {\r",
+									"            \"$id\": \"#/properties/1\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 1 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"LOG_ID\",\r",
+									"                \"USER_ID\",\r",
+									"                \"LOG_IN_TIME\",\r",
+									"                \"LOG_OUT_TIME\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"LOG_ID\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_IN_TIME\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_IN_TIME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The LOG_IN_TIME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"LOG_OUT_TIME\": {\r",
+									"                    \"$id\": \"#/properties/1/properties/LOG_OUT_TIME\",\r",
+									"                    \"type\": \"null\",\r",
+									"                    \"title\": \"The LOG_OUT_TIME schema\",\r",
+									"                    \"default\": null\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewLogs.php?id=po",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewLogs.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "po"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Logs Fetched\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"LOG_ID\");",
+							"    pm.expect(pm.response.text()).to.include(\"USER_ID\");",
+							"    pm.expect(pm.response.text()).to.include(\"LOG_IN_TIME\");",
+							"    pm.expect(pm.response.text()).to.include(\"LOG_OUT_TIME\");",
+							"});",
+							"pm.test(\"Ok\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Add Class",
+					"item": [
+						{
+							"name": "27_Add new class",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "className",
+											"value": "II",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/addClass.php",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"addClass.php"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "28_Add new class with empty ClassName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Ok\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "className",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/addClass.php",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"addClass.php"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "29_Add New Class With Invalid Class name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Ok\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "className",
+											"value": "45",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/addClass.php",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"addClass.php"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "30_Add New Class With Combination of valid and invalid Class name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"pm.test(\"Ok\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "className",
+											"value": "4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/addClass.php",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"addClass.php"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Class added successfully\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Class added successfully\");",
+									"});",
+									"pm.test(\"Invalid class name\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Invalid class name\");",
+									"});",
+									"pm.test(\"Created\", function () {",
+									"    pm.response.to.have.status(\"Created\");",
+									"});",
+									"pm.test(\"Status code is 201 \", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"var schema = {",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",",
+									"    \"$id\": \"http://example.com/example.json\",",
+									"    \"type\": \"object\",",
+									"    \"title\": \"The root schema\",",
+									"    \"default\": {},",
+									"    \"required\": [",
+									"        \"message\"",
+									"    ],",
+									"    \"properties\": {",
+									"        \"message\": {",
+									"            \"$id\": \"#/properties/message\",",
+									"            \"type\": \"string\",",
+									"            \"title\": \"The message schema\",",
+									"            \"default\": \"\"",
+									"        }",
+									"    }",
+									"};",
+									"",
+									"pm.test('Schema is valid', function () {",
+									"    var result = tv4.validateResult(pm.response.json(),schema);",
+									"    if(!result.valid){",
+									"        console.log(result);",
+									"    }",
+									"    pm.expect(result.valid).to.be.true;",
+									"});"
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "View Class",
+					"item": [
+						{
+							"name": "31_view classes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"CLASS_ID of 4th Number Class Should be 15\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData[4].CLASS_ID).to.eql(\"15\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"CLASS_NAME\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"CLASS_NAME\");\r",
+											"});\r",
+											"var schema ={\r",
+											"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+											"    \"$id\": \"http://example.com/example.json\",\r",
+											"    \"type\": \"object\",\r",
+											"    \"title\": \"The root schema\",\r",
+											"    \"default\": {},\r",
+											"    \"required\": [\r",
+											"        \"0\"\r",
+											"    ],\r",
+											"    \"properties\": {\r",
+											"        \"0\": {\r",
+											"            \"$id\": \"#/properties/0\",\r",
+											"            \"type\": \"object\",\r",
+											"            \"title\": \"The 0 schema\",\r",
+											"            \"default\": {},\r",
+											"            \"required\": [\r",
+											"                \"CLASS_ID\",\r",
+											"                \"CLASS_NAME\",\r",
+											"                \"USER_ID\",\r",
+											"                \"DATE_\",\r",
+											"                \"STATUS\"\r",
+											"            ],\r",
+											"            \"properties\": {\r",
+											"                \"CLASS_ID\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/CLASS_ID\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The CLASS_ID schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"CLASS_NAME\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/CLASS_NAME\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The CLASS_NAME schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"USER_ID\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The USER_ID schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"DATE_\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/DATE_\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The DATE_ schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"STATUS\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/STATUS\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The STATUS schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                }\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.test('Schema is valid', function () {\r",
+											"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"    if(!result.valid){\r",
+											"        console.log(result);\r",
+											"    }\r",
+											"    pm.expect(result.valid).to.be.true;\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/viewClass.php",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"viewClass.php"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "32_view Specific class",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"CLASS_NAME Should be III\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData[0].CLASS_NAME).to.eql(\"III\");\r",
+											"});\r",
+											"pm.test(\"CLASS_NAME\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"CLASS_NAME\");\r",
+											"});\r",
+											"var schema ={\r",
+											"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+											"    \"$id\": \"http://example.com/example.json\",\r",
+											"    \"type\": \"object\",\r",
+											"    \"title\": \"The root schema\",\r",
+											"    \"default\": {},\r",
+											"    \"required\": [\r",
+											"        \"0\"\r",
+											"    ],\r",
+											"    \"properties\": {\r",
+											"        \"0\": {\r",
+											"            \"$id\": \"#/properties/0\",\r",
+											"            \"type\": \"object\",\r",
+											"            \"title\": \"The 0 schema\",\r",
+											"            \"default\": {},\r",
+											"            \"required\": [\r",
+											"                \"CLASS_ID\",\r",
+											"                \"CLASS_NAME\",\r",
+											"                \"USER_ID\",\r",
+											"                \"DATE_\",\r",
+											"                \"STATUS\"\r",
+											"            ],\r",
+											"            \"properties\": {\r",
+											"                \"CLASS_ID\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/CLASS_ID\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The CLASS_ID schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"CLASS_NAME\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/CLASS_NAME\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The CLASS_NAME schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"USER_ID\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The USER_ID schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"DATE_\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/DATE_\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The DATE_ schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                },\r",
+											"                \"STATUS\": {\r",
+											"                    \"$id\": \"#/properties/0/properties/STATUS\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The STATUS schema\",\r",
+											"                    \"default\": \"\"\r",
+											"                }\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.test('Schema is valid', function () {\r",
+											"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"    if(!result.valid){\r",
+											"        console.log(result);\r",
+											"    }\r",
+											"    pm.expect(result.valid).to.be.true;\r",
+											"});\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/viewClass.php?id=III",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"viewClass.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "III"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "33_view class with invalid Class Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"\r",
+											"\r",
+											"var schema = {\r",
+											"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+											"    \"$id\": \"http://example.com/example.json\",\r",
+											"    \"type\": \"object\",\r",
+											"    \"title\": \"The root schema\",\r",
+											"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+											"    \"default\": {},\r",
+											"    \"examples\": [\r",
+											"        {\r",
+											"            \"Message\": \"No class Found\"\r",
+											"        }\r",
+											"    ],\r",
+											"    \"required\": [\r",
+											"        \"Message\"\r",
+											"    ],\r",
+											"    \"properties\": {\r",
+											"        \"Message\": {\r",
+											"            \"$id\": \"#/properties/Message\",\r",
+											"            \"type\": \"string\",\r",
+											"            \"title\": \"The Message schema\",\r",
+											"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"            \"default\": \"\",\r",
+											"            \"examples\": [\r",
+											"                \"No class Found\"\r",
+											"            ]\r",
+											"        }\r",
+											"    },\r",
+											"    \"additionalProperties\": true\r",
+											"};\r",
+											"\r",
+											"pm.test('Schema is valid', function () {\r",
+											"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+											"    if(!result.valid){\r",
+											"        console.log(result);\r",
+											"    }\r",
+											"    pm.expect(result.valid).to.be.true;\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/viewClass.php?id=4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"viewClass.php"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Ok\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});"
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Fees",
+			"item": [
+				{
+					"name": "34_view all student's fee",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Student Name Should be MANISHA NEGI \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[1].Student_Name).to.eql(\"MANISHA NEGI\");\r",
+									"});\r",
+									"var schema ={\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"Student Id\",\r",
+									"                \"Student_Name\",\r",
+									"                \"Student Class\",\r",
+									"                \"Session\",\r",
+									"                \"Current Amount Due\",\r",
+									"                \"Previous Amount Due\",\r",
+									"                \"Total Amount Due\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"Student Id\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/Student%20Id\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The Student Id schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"Student_Name\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/Student_Name\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The Student_Name schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"Student Class\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/Student%20Class\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The Student Class schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"Session\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/Session\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The Session schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"Current Amount Due\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/Current%20Amount%20Due\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The Current Amount Due schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"Previous Amount Due\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/Previous%20Amount%20Due\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The Previous Amount Due schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"Total Amount Due\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/Total%20Amount%20Due\",\r",
+									"                    \"type\": \"integer\",\r",
+									"                    \"title\": \"The Total Amount Due schema\",\r",
+									"                    \"default\": 0\r",
+									"                }\r",
+									"            },\r",
+									"            \"additionalProperties\": true\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid ', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewFee.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewFee.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "35_view fee with valid student id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Student Name Should be HOSHIYAR SINGH \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.Student_Name).to.eql(\"HOSHIYAR SINGH\");\r",
+									"});\r",
+									"var schema ={\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"Student Id\",\r",
+									"        \"Student_Name\",\r",
+									"        \"Student Class\",\r",
+									"        \"Session\",\r",
+									"        \"Current Amount Due\",\r",
+									"        \"Previous Amount Due\",\r",
+									"        \"Total Amount Due\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"Student Id\": {\r",
+									"            \"$id\": \"#/properties/Student%20Id\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Student Id schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Student_Name\": {\r",
+									"            \"$id\": \"#/properties/Student_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Student_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Student Class\": {\r",
+									"            \"$id\": \"#/properties/Student%20Class\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Student Class schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Session\": {\r",
+									"            \"$id\": \"#/properties/Session\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Session schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Current Amount Due\": {\r",
+									"            \"$id\": \"#/properties/Current%20Amount%20Due\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Current Amount Due schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Previous Amount Due\": {\r",
+									"            \"$id\": \"#/properties/Previous%20Amount%20Due\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Previous Amount Due schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Total Amount Due\": {\r",
+									"            \"$id\": \"#/properties/Total%20Amount%20Due\",\r",
+									"            \"type\": \"integer\",\r",
+									"            \"title\": \"The Total Amount Due schema\",\r",
+									"            \"default\": 0\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"}\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewFee.php?id=4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewFee.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "36_view fee with invalid student id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var schema ={\r",
+									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"Student Id\",\r",
+									"        \"Student_Name\",\r",
+									"        \"Student Class\",\r",
+									"        \"Session\",\r",
+									"        \"Current Amount Due\",\r",
+									"        \"Previous Amount Due\",\r",
+									"        \"Total Amount Due\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"Student Id\": {\r",
+									"            \"$id\": \"#/properties/Student%20Id\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Student Id schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Student_Name\": {\r",
+									"            \"$id\": \"#/properties/Student_Name\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Student_Name schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Student Class\": {\r",
+									"            \"$id\": \"#/properties/Student%20Class\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Student Class schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Session\": {\r",
+									"            \"$id\": \"#/properties/Session\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Session schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Current Amount Due\": {\r",
+									"            \"$id\": \"#/properties/Current%20Amount%20Due\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Current Amount Due schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Previous Amount Due\": {\r",
+									"            \"$id\": \"#/properties/Previous%20Amount%20Due\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The Previous Amount Due schema\",\r",
+									"            \"default\": \"\"\r",
+									"        },\r",
+									"        \"Total Amount Due\": {\r",
+									"            \"$id\": \"#/properties/Total%20Amount%20Due\",\r",
+									"            \"type\": \"integer\",\r",
+									"            \"title\": \"The Total Amount Due schema\",\r",
+									"            \"default\": 0\r",
+									"        }\r",
+									"    },\r",
+									"    \"additionalProperties\": true\r",
+									"}\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewFee.php?id=123",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewFee.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "37_View all Students",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Second Student Name Should be BABITA NEGI \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[2].STUDENT_NAME).to.eql(\"BABITA NEGI\");\r",
+									"    pm.expect(jsonData[2].FATHER_NAME).to.eql(\"DIVYANSH KUMAR\");\r",
+									"    pm.expect(jsonData[2].MOTHER_NAME).to.eql(\"NEETA SINGH\");\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"STUDENT_ID\",\r",
+									"                \"STUDENT_NAME\",\r",
+									"                \"FATHER_NAME\",\r",
+									"                \"MOTHER_NAME\",\r",
+									"                \"D_O_B\",\r",
+									"                \"GENDER\",\r",
+									"                \"ADDRESS\",\r",
+									"                \"CONTACT_NUMBER\",\r",
+									"                \"DATE_OF_ADMISSION\",\r",
+									"                \"DATE_\",\r",
+									"                \"USER_ID\",\r",
+									"                \"STATUS\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"STUDENT_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/STUDENT_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The STUDENT_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"STUDENT_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/STUDENT_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The STUDENT_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"FATHER_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/FATHER_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The FATHER_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"MOTHER_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/MOTHER_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The MOTHER_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"D_O_B\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/D_O_B\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The D_O_B schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"GENDER\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/GENDER\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The GENDER schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"ADDRESS\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/ADDRESS\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The ADDRESS schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"CONTACT_NUMBER\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/CONTACT_NUMBER\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The CONTACT_NUMBER schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"DATE_OF_ADMISSION\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/DATE_OF_ADMISSION\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The DATE_OF_ADMISSION schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"DATE_\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/DATE_\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The DATE_ schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"STATUS\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/STATUS\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The STATUS schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewStudent.php",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewStudent.php"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "38_View Specific Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\" STUDENT_ID Should be 5  \", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].STUDENT_ID).to.eql(\"5\");\r",
+									"    pm.expect(jsonData[0].STUDENT_NAME).to.eql(\"MANJU RANA\");\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"0\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"0\": {\r",
+									"            \"$id\": \"#/properties/0\",\r",
+									"            \"type\": \"object\",\r",
+									"            \"title\": \"The 0 schema\",\r",
+									"            \"default\": {},\r",
+									"            \"required\": [\r",
+									"                \"STUDENT_ID\",\r",
+									"                \"STUDENT_NAME\",\r",
+									"                \"FATHER_NAME\",\r",
+									"                \"MOTHER_NAME\",\r",
+									"                \"D_O_B\",\r",
+									"                \"GENDER\",\r",
+									"                \"ADDRESS\",\r",
+									"                \"CONTACT_NUMBER\",\r",
+									"                \"DATE_OF_ADMISSION\",\r",
+									"                \"DATE_\",\r",
+									"                \"USER_ID\",\r",
+									"                \"STATUS\"\r",
+									"            ],\r",
+									"            \"properties\": {\r",
+									"                \"STUDENT_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/STUDENT_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The STUDENT_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"STUDENT_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/STUDENT_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The STUDENT_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"FATHER_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/FATHER_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The FATHER_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"MOTHER_NAME\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/MOTHER_NAME\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The MOTHER_NAME schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"D_O_B\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/D_O_B\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The D_O_B schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"GENDER\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/GENDER\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The GENDER schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"ADDRESS\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/ADDRESS\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The ADDRESS schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"CONTACT_NUMBER\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/CONTACT_NUMBER\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The CONTACT_NUMBER schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"DATE_OF_ADMISSION\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/DATE_OF_ADMISSION\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The DATE_OF_ADMISSION schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"DATE_\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/DATE_\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The DATE_ schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"USER_ID\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/USER_ID\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The USER_ID schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                },\r",
+									"                \"STATUS\": {\r",
+									"                    \"$id\": \"#/properties/0/properties/STATUS\",\r",
+									"                    \"type\": \"string\",\r",
+									"                    \"title\": \"The STATUS schema\",\r",
+									"                    \"default\": \"\"\r",
+									"                }\r",
+									"            }\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewStudent.php?q=5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewStudent.php"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "39_View Student with invalid id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404 NOT Found\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"message\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"message\": {\r",
+									"            \"$id\": \"#/properties/message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The message schema\",\r",
+									"            \"default\": \"\"\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid ', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewStudent.php?q=123",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewStudent.php"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "40_View Student With Blank Student Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404 NOT Found\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"var schema = {\r",
+									"    \"$schema\": \"http://json-schema.org/draft-06/schema\",\r",
+									"    \"$id\": \"http://example.com/example.json\",\r",
+									"    \"type\": \"object\",\r",
+									"    \"title\": \"The root schema\",\r",
+									"    \"default\": {},\r",
+									"    \"required\": [\r",
+									"        \"message\"\r",
+									"    ],\r",
+									"    \"properties\": {\r",
+									"        \"message\": {\r",
+									"            \"$id\": \"#/properties/message\",\r",
+									"            \"type\": \"string\",\r",
+									"            \"title\": \"The message schema\",\r",
+									"            \"default\": \"\"\r",
+									"        }\r",
+									"    }\r",
+									"};\r",
+									"\r",
+									"pm.test('Schema is valid ', function () {\r",
+									"    var result = tv4.validateResult(pm.response.json(),schema);\r",
+									"    if(!result.valid){\r",
+									"        console.log(result);\r",
+									"    }\r",
+									"    pm.expect(result.valid).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/viewStudent.php?q=",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"viewStudent.php"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.collectionVariables.set(\"admin_Username\", \"sameer_r\");",
+					"pm.collectionVariables.set(\"admin_Password\", \"Sameer@123\");",
+					"pm.collectionVariables.set(\"Manag_Username\", \"pooja_g\");",
+					"pm.collectionVariables.set(\"Manag_Password\", \"Pooja@123\");",
+					"pm.collectionVariables.set(\"account_Username\", \"rohit_s\");",
+					"pm.collectionVariables.set(\"account_Password\", \"Rohit@123\");",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Content-Type is present\", function () {",
+					"    pm.response.to.have.header(\"Content-Type\");",
+					"});",
+					"pm.test(\"Response time is less than 200ms\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(200);",
+					"});"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "account_Username",
+			"value": ""
+		},
+		{
+			"key": "account_Password",
+			"value": ""
+		},
+		{
+			"key": "Change_PassU",
+			"value": ""
+		},
+		{
+			"key": "Change_PassP",
+			"value": ""
+		},
+		{
+			"key": "admin_Username",
+			"value": ""
+		},
+		{
+			"key": "admin_Password",
+			"value": ""
+		},
+		{
+			"key": "Manag_Username",
+			"value": ""
+		},
+		{
+			"key": "Manag_Password",
+			"value": ""
+		},
+		{
+			"key": "userId",
+			"value": ""
+		},
+		{
+			"key": "firstName",
+			"value": ""
+		},
+		{
+			"key": "lastName",
+			"value": ""
+		},
+		{
+			"key": "userType",
+			"value": ""
+		},
+		{
+			"key": "currentPassword",
+			"value": ""
+		},
+		{
+			"key": "newPassword",
+			"value": ""
+		},
+		{
+			"key": "repeatPassword",
+			"value": ""
+		}
+	]
+}
