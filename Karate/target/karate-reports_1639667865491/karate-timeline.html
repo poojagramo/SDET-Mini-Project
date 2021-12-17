@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-4","id":1},{"content":"pool-1-thread-5","id":2},{"content":"pool-1-thread-1","id":3},{"content":"pool-1-thread-3","id":4},{"content":"pool-1-thread-2","id":5}];
+var items = [{"id":1,"group":1,"content":"tests\/04_Login_with_username_emptypassword[1:3]","start":1639666243625,"end":1639666243900,"title":"tests\/04_Login_with_username_emptypassword[1:3] 20:20:43.625-20:20:43.900 login with invalid creds"},{"id":2,"group":2,"content":"tests\/05_VerifyURL[1:3]","start":1639666243625,"end":1639666243861,"title":"tests\/05_VerifyURL[1:3] 20:20:43.625-20:20:43.861 Test GET API"},{"id":3,"group":3,"content":"tests\/01_Login_with_admin_creds[1:3]","start":1639666243625,"end":1639666243926,"title":"tests\/01_Login_with_admin_creds[1:3] 20:20:43.625-20:20:43.926 Login with Admin creds"},{"id":4,"group":4,"content":"tests\/03_Login_with_manag_cred[1:3]","start":1639666243625,"end":1639666243900,"title":"tests\/03_Login_with_manag_cred[1:3] 20:20:43.625-20:20:43.900 Login with manag creds"},{"id":5,"group":5,"content":"tests\/02_Login_with_invalid_creds[1:3]","start":1639666243625,"end":1639666243924,"title":"tests\/02_Login_with_invalid_creds[1:3] 20:20:43.625-20:20:43.924 login with invalid creds"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

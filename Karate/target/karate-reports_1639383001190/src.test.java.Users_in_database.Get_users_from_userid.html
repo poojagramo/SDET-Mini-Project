@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <title>src.test.java.Users_in_database.Get_users_from_userid</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="karate-summary.html">
+      <img src="karate-logo.svg" alt="Karate"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2021-12-13 01:39:12 pm</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:3]"><span>[1:3]</span> <span>Get users from userId</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">src/test/java/Users_in_database/Get_users_from_userid.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">GET users API</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:3]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:3]</span>
+                <span class="scenario-name">Get users from userId</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>330</span>
+            </div>
+          </div>
+          
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref passed">4</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url &#39;http://localhost/fms/REST/viewUsers.php&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">44</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref passed">5</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">250</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.5">13:39:12.582 request:
+1 &gt; GET http://localhost/fms/REST/viewUsers.php
+1 &gt; Host: localhost
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+13:39:12.621 response time in milliseconds: 33
+1 &lt; 200
+1 &lt; Date: Mon, 13 Dec 2021 08:09:12 GMT
+1 &lt; Server: Apache/2.4.51 (Win64) OpenSSL/1.1.1l PHP/8.0.13
+1 &lt; X-Powered-By: PHP/8.0.13
+1 &lt; Expires: Thu, 19 Nov 1981 08:52:00 GMT
+1 &lt; Cache-Control: no-store, no-cache, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Content-Length: 619
+1 &lt; Keep-Alive: timeout=5, max=100
+1 &lt; Connection: Keep-Alive
+1 &lt; Content-Type: application/json; charset=UTF-8
+1 &lt; Set-Cookie: PHPSESSID=c80ljai656fluafkvk0n24oi9j; Domain=localhost
+{&quot;USER_ID&quot;:&quot;anshuman_s&quot;,&quot;FIRST_NAME&quot;:&quot;Anshuman&quot;,&quot;LAST_NAME&quot;:&quot;Singh&quot;,&quot;USER_TYPE&quot;:&quot;ACCOUNTS&quot;}{&quot;USER_ID&quot;:&quot;pooja_g&quot;,&quot;FIRST_NAME&quot;:&quot;Pooja&quot;,&quot;LAST_NAME&quot;:&quot;Gramopadhye&quot;,&quot;USER_TYPE&quot;:&quot;MANAGEMENT&quot;}{&quot;USER_ID&quot;:&quot;rashi_a&quot;,&quot;FIRST_NAME&quot;:&quot;Rashi&quot;,&quot;LAST_NAME&quot;:&quot;Agarwal&quot;,&quot;USER_TYPE&quot;:&quot;ADMIN&quot;}{&quot;USER_ID&quot;:&quot;rohit_s&quot;,&quot;FIRST_NAME&quot;:&quot;Rohit&quot;,&quot;LAST_NAME&quot;:&quot;Singh&quot;,&quot;USER_TYPE&quot;:&quot;ACCOUNTS&quot;}{&quot;USER_ID&quot;:&quot;sakshi_r&quot;,&quot;FIRST_NAME&quot;:&quot;Sakshi&quot;,&quot;LAST_NAME&quot;:&quot;Raut&quot;,&quot;USER_TYPE&quot;:&quot;MANAGEMENT&quot;}{&quot;USER_ID&quot;:&quot;samarth_n&quot;,&quot;FIRST_NAME&quot;:&quot;Samarth&quot;,&quot;LAST_NAME&quot;:&quot;Nema&quot;,&quot;USER_TYPE&quot;:&quot;ACCOUNTS&quot;}{&quot;USER_ID&quot;:&quot;sameer_r&quot;,&quot;FIRST_NAME&quot;:&quot;Sameer&quot;,&quot;LAST_NAME&quot;:&quot;Ramchandani&quot;,&quot;USER_TYPE&quot;:&quot;ADMIN&quot;}
+13:39:12.636 auto-conversion of response failed: net.minidev.json.parser.ParseException: Unexpected token { at position 90.
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref passed">6</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref passed">7</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">36</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.7">13:39:12.674 [print] {&quot;USER_ID&quot;:&quot;anshuman_s&quot;,&quot;FIRST_NAME&quot;:&quot;Anshuman&quot;,&quot;LAST_NAME&quot;:&quot;Singh&quot;,&quot;USER_TYPE&quot;:&quot;ACCOUNTS&quot;}{&quot;USER_ID&quot;:&quot;pooja_g&quot;,&quot;FIRST_NAME&quot;:&quot;Pooja&quot;,&quot;LAST_NAME&quot;:&quot;Gramopadhye&quot;,&quot;USER_TYPE&quot;:&quot;MANAGEMENT&quot;}{&quot;USER_ID&quot;:&quot;rashi_a&quot;,&quot;FIRST_NAME&quot;:&quot;Rashi&quot;,&quot;LAST_NAME&quot;:&quot;Agarwal&quot;,&quot;USER_TYPE&quot;:&quot;ADMIN&quot;}{&quot;USER_ID&quot;:&quot;rohit_s&quot;,&quot;FIRST_NAME&quot;:&quot;Rohit&quot;,&quot;LAST_NAME&quot;:&quot;Singh&quot;,&quot;USER_TYPE&quot;:&quot;ACCOUNTS&quot;}{&quot;USER_ID&quot;:&quot;sakshi_r&quot;,&quot;FIRST_NAME&quot;:&quot;Sakshi&quot;,&quot;LAST_NAME&quot;:&quot;Raut&quot;,&quot;USER_TYPE&quot;:&quot;MANAGEMENT&quot;}{&quot;USER_ID&quot;:&quot;samarth_n&quot;,&quot;FIRST_NAME&quot;:&quot;Samarth&quot;,&quot;LAST_NAME&quot;:&quot;Nema&quot;,&quot;USER_TYPE&quot;:&quot;ACCOUNTS&quot;}{&quot;USER_ID&quot;:&quot;sameer_r&quot;,&quot;FIRST_NAME&quot;:&quot;Sameer&quot;,&quot;LAST_NAME&quot;:&quot;Ramchandani&quot;,&quot;USER_TYPE&quot;:&quot;ADMIN&quot;} 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,74 @@
+{
+    "0": {
+        "USER_ID": "anagha",
+        "FIRST_NAME": "anagha",
+        "LAST_NAME": "jadhav",
+        "USER_TYPE": "ADMIN"
+    },
+    "1": {
+        "USER_ID": "anshuman_s",
+        "FIRST_NAME": "Anshuman",
+        "LAST_NAME": "Singh",
+        "USER_TYPE": "ACCOUNTS"
+    },
+    "2": {
+        "USER_ID": "anushka",
+        "FIRST_NAME": "anushka",
+        "LAST_NAME": "devasthale",
+        "USER_TYPE": "ADMIN"
+    },
+    "3": {
+        "USER_ID": "dhanashree",
+        "FIRST_NAME": "dhanashree",
+        "LAST_NAME": "shivudkar",
+        "USER_TYPE": "ACCOUNTS"
+    },
+    "4": {
+        "USER_ID": "isha",
+        "FIRST_NAME": "isha",
+        "LAST_NAME": "raorane",
+        "USER_TYPE": "ADMIN"
+    },
+    "5": {
+        "USER_ID": "pooja_g",
+        "FIRST_NAME": "Pooja",
+        "LAST_NAME": "Gramopadhye",
+        "USER_TYPE": "ADMIN"
+    },
+    "6": {
+        "USER_ID": "Rajat",
+        "FIRST_NAME": "Rajat",
+        "LAST_NAME": "Singh",
+        "USER_TYPE": "MANAGEMENT"
+    },
+    "7": {
+        "USER_ID": "rashi_a",
+        "FIRST_NAME": "Rashi",
+        "LAST_NAME": "Agarwal",
+        "USER_TYPE": "MANAGEMENT"
+    },
+    "8": {
+        "USER_ID": "rohit_s",
+        "FIRST_NAME": "Rohit",
+        "LAST_NAME": "Singh",
+        "USER_TYPE": "ACCOUNTS"
+    },
+    "9": {
+        "USER_ID": "sakshi_r",
+        "FIRST_NAME": "Sakshi",
+        "LAST_NAME": "Raut",
+        "USER_TYPE": "MANAGEMENT"
+    },
+    "10": {
+        "USER_ID": "samarth_n",
+        "FIRST_NAME": "Samarth",
+        "LAST_NAME": "Nema",
+        "USER_TYPE": "ACCOUNTS"
+    },
+    "11": {
+        "USER_ID": "sameer_r",
+        "FIRST_NAME": "Sameer",
+        "LAST_NAME": "Ramchandani",
+        "USER_TYPE": "ADMIN"
+    }
+}

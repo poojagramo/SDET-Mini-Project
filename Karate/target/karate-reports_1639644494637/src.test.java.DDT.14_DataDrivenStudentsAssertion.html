@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <title>src.test.java.DDT.14_DataDrivenStudentsAssertion</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="karate-summary.html">
+      <img src="karate-logo.svg" alt="Karate"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2021-12-16 02:16:13 pm</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:6]"><span>[1:6]</span> <span>Get all Students using GET method DDT Assertion</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">src/test/java/DDT/14_DataDrivenStudentsAssertion.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">GET user API</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:6]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:6]</span>
+                <span class="scenario-name">Get all Students using GET method DDT Assertion</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>392</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:6]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:6]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def Students = read(&quot;responseStudents.json&quot;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">149</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.7">
+      <div class="step-ref passed">7</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>url &#39;http://localhost/fms/REST/viewStudent.php&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">223</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.8">14:16:13.239 request:
+1 &gt; GET http://localhost/fms/REST/viewStudent.php
+1 &gt; Host: localhost
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:16:13.289 response time in milliseconds: 45
+1 &lt; 200
+1 &lt; Date: Thu, 16 Dec 2021 08:46:13 GMT
+1 &lt; Server: Apache/2.4.51 (Win64) OpenSSL/1.1.1l PHP/8.0.13
+1 &lt; X-Powered-By: PHP/8.0.13
+1 &lt; Expires: Thu, 19 Nov 1981 08:52:00 GMT
+1 &lt; Cache-Control: no-store, no-cache, must-revalidate
+1 &lt; Pragma: no-cache
+1 &lt; Content-Length: 3834
+1 &lt; Keep-Alive: timeout=5, max=100
+1 &lt; Connection: Keep-Alive
+1 &lt; Content-Type: application/json; charset=UTF-8
+1 &lt; Set-Cookie: PHPSESSID=grutn7vf6503pvb634skk0320n; Domain=localhost
+{&quot;0&quot;:{&quot;STUDENT_ID&quot;:&quot;1&quot;,&quot;STUDENT_NAME&quot;:&quot;HOSHIYAR SINGH&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;21-02-2006&quot;,&quot;GENDER&quot;:&quot;M&quot;,&quot;ADDRESS&quot;:&quot;Flat F\/35, Durga Colony, Ramnagar&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532581&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;1&quot;:{&quot;STUDENT_ID&quot;:&quot;2&quot;,&quot;STUDENT_NAME&quot;:&quot;MANISHA NEGI&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;14-01-2006&quot;,&quot;GENDER&quot;:&quot;F&quot;,&quot;ADDRESS&quot;:&quot;House Number 23, Modern Enclave, Nainital&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532582&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;2&quot;:{&quot;STUDENT_ID&quot;:&quot;3&quot;,&quot;STUDENT_NAME&quot;:&quot;BABITA NEGI&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;14-01-2006&quot;,&quot;GENDER&quot;:&quot;F&quot;,&quot;ADDRESS&quot;:&quot;P 30\/35 Anand Vihar, Haldwani&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532583&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;3&quot;:{&quot;STUDENT_ID&quot;:&quot;4&quot;,&quot;STUDENT_NAME&quot;:&quot;BHAWANA JOSHI&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;02-04-2006&quot;,&quot;GENDER&quot;:&quot;F&quot;,&quot;ADDRESS&quot;:&quot;Flat A\/32, C-Wing, Paradise Villas, Bhimtal&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532584&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;4&quot;:{&quot;STUDENT_ID&quot;:&quot;5&quot;,&quot;STUDENT_NAME&quot;:&quot;MANJU RANA&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;01-06-2006&quot;,&quot;GENDER&quot;:&quot;F&quot;,&quot;ADDRESS&quot;:&quot;Maa Bhadra Kali Society, Haldwani&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532585&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;5&quot;:{&quot;STUDENT_ID&quot;:&quot;6&quot;,&quot;STUDENT_NAME&quot;:&quot;ROHIT SINGH MEHRA&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;02-10-2016&quot;,&quot;GENDER&quot;:&quot;M&quot;,&quot;ADDRESS&quot;:&quot;House Number 32, Amba Nagar, Kathgodam&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532586&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;6&quot;:{&quot;STUDENT_ID&quot;:&quot;7&quot;,&quot;STUDENT_NAME&quot;:&quot;PRIYANSHU RANA&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;23-03-2016&quot;,&quot;GENDER&quot;:&quot;M&quot;,&quot;ADDRESS&quot;:&quot;House Number 121, Faiz Colony, Haldwani&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532587&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;7&quot;:{&quot;STUDENT_ID&quot;:&quot;8&quot;,&quot;STUDENT_NAME&quot;:&quot;TANIYA NEGI&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;01-03-2006&quot;,&quot;GENDER&quot;:&quot;F&quot;,&quot;ADDRESS&quot;:&quot;Flat Number 12, Indra Cottages, Kathgodam&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532588&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;8&quot;:{&quot;STUDENT_ID&quot;:&quot;9&quot;,&quot;STUDENT_NAME&quot;:&quot;MANOJ SINGH&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;25-11-2005&quot;,&quot;GENDER&quot;:&quot;M&quot;,&quot;ADDRESS&quot;:&quot;House Number 74, New Society, Haldwani&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532589&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;9&quot;:{&quot;STUDENT_ID&quot;:&quot;10&quot;,&quot;STUDENT_NAME&quot;:&quot;NEHA MARTOLIYA&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;25-09-2006&quot;,&quot;GENDER&quot;:&quot;F&quot;,&quot;ADDRESS&quot;:&quot;Krishna Kunj, Nainital&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532590&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;10&quot;:{&quot;STUDENT_ID&quot;:&quot;11&quot;,&quot;STUDENT_NAME&quot;:&quot;NISHA&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;28-09-2006&quot;,&quot;GENDER&quot;:&quot;F&quot;,&quot;ADDRESS&quot;:&quot;Lake View Colony, Bhimtal&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532590&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2029-04-17 16:13:00&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;},&quot;11&quot;:{&quot;STUDENT_ID&quot;:&quot;12&quot;,&quot;STUDENT_NAME&quot;:&quot;VISHAL KUMAR&quot;,&quot;FATHER_NAME&quot;:&quot;DIVYANSH KUMAR&quot;,&quot;MOTHER_NAME&quot;:&quot;NEETA SINGH&quot;,&quot;D_O_B&quot;:&quot;28-08-2006&quot;,&quot;GENDER&quot;:&quot;M&quot;,&quot;ADDRESS&quot;:&quot;Flat F\/31, Divine Colony, Ramnagar&quot;,&quot;CONTACT_NUMBER&quot;:&quot;9637532581&quot;,&quot;DATE_OF_ADMISSION&quot;:&quot;01-04-2017&quot;,&quot;DATE_&quot;:&quot;2017-11-30 15:11:54&quot;,&quot;USER_ID&quot;:&quot;hemant&quot;,&quot;STATUS&quot;:&quot;1&quot;}}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response ==  Students</span>
+      </div>
+    </div>
+    <div class="time-cell passed">11</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">8</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.11">14:16:13.312 [print] {
+  &quot;0&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;1&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;HOSHIYAR SINGH&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;21-02-2006&quot;,
+    &quot;GENDER&quot;: &quot;M&quot;,
+    &quot;ADDRESS&quot;: &quot;Flat F/35, Durga Colony, Ramnagar&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532581&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;1&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;2&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;MANISHA NEGI&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;14-01-2006&quot;,
+    &quot;GENDER&quot;: &quot;F&quot;,
+    &quot;ADDRESS&quot;: &quot;House Number 23, Modern Enclave, Nainital&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532582&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;2&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;3&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;BABITA NEGI&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;14-01-2006&quot;,
+    &quot;GENDER&quot;: &quot;F&quot;,
+    &quot;ADDRESS&quot;: &quot;P 30/35 Anand Vihar, Haldwani&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532583&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;3&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;4&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;BHAWANA JOSHI&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;02-04-2006&quot;,
+    &quot;GENDER&quot;: &quot;F&quot;,
+    &quot;ADDRESS&quot;: &quot;Flat A/32, C-Wing, Paradise Villas, Bhimtal&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532584&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;4&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;5&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;MANJU RANA&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;01-06-2006&quot;,
+    &quot;GENDER&quot;: &quot;F&quot;,
+    &quot;ADDRESS&quot;: &quot;Maa Bhadra Kali Society, Haldwani&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532585&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;5&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;6&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;ROHIT SINGH MEHRA&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;02-10-2016&quot;,
+    &quot;GENDER&quot;: &quot;M&quot;,
+    &quot;ADDRESS&quot;: &quot;House Number 32, Amba Nagar, Kathgodam&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532586&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;6&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;7&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;PRIYANSHU RANA&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;23-03-2016&quot;,
+    &quot;GENDER&quot;: &quot;M&quot;,
+    &quot;ADDRESS&quot;: &quot;House Number 121, Faiz Colony, Haldwani&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532587&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;7&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;8&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;TANIYA NEGI&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;01-03-2006&quot;,
+    &quot;GENDER&quot;: &quot;F&quot;,
+    &quot;ADDRESS&quot;: &quot;Flat Number 12, Indra Cottages, Kathgodam&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532588&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;8&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;9&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;MANOJ SINGH&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;25-11-2005&quot;,
+    &quot;GENDER&quot;: &quot;M&quot;,
+    &quot;ADDRESS&quot;: &quot;House Number 74, New Society, Haldwani&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532589&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;9&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;10&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;NEHA MARTOLIYA&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;25-09-2006&quot;,
+    &quot;GENDER&quot;: &quot;F&quot;,
+    &quot;ADDRESS&quot;: &quot;Krishna Kunj, Nainital&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532590&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;10&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;11&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;NISHA&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;28-09-2006&quot;,
+    &quot;GENDER&quot;: &quot;F&quot;,
+    &quot;ADDRESS&quot;: &quot;Lake View Colony, Bhimtal&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532590&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2029-04-17 16:13:00&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  },
+  &quot;11&quot;: {
+    &quot;STUDENT_ID&quot;: &quot;12&quot;,
+    &quot;STUDENT_NAME&quot;: &quot;VISHAL KUMAR&quot;,
+    &quot;FATHER_NAME&quot;: &quot;DIVYANSH KUMAR&quot;,
+    &quot;MOTHER_NAME&quot;: &quot;NEETA SINGH&quot;,
+    &quot;D_O_B&quot;: &quot;28-08-2006&quot;,
+    &quot;GENDER&quot;: &quot;M&quot;,
+    &quot;ADDRESS&quot;: &quot;Flat F/31, Divine Colony, Ramnagar&quot;,
+    &quot;CONTACT_NUMBER&quot;: &quot;9637532581&quot;,
+    &quot;DATE_OF_ADMISSION&quot;: &quot;01-04-2017&quot;,
+    &quot;DATE_&quot;: &quot;2017-11-30 15:11:54&quot;,
+    &quot;USER_ID&quot;: &quot;hemant&quot;,
+    &quot;STATUS&quot;: &quot;1&quot;
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

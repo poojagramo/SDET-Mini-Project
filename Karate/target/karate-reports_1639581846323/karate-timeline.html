@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3}];
+var items = [{"id":1,"group":1,"content":"DDT\/12_DataDrivenLoginTest[1:6]","start":1639581812731,"end":1639581812757,"title":"DDT\/12_DataDrivenLoginTest[1:6] 20:53:32.731-20:53:32.757 DDT login response Assertion","className":"failed"},{"id":2,"group":2,"content":"DDT\/13_DataDrivenGetAllUsersDB[1:6]","start":1639581812731,"end":1639581813013,"title":"DDT\/13_DataDrivenGetAllUsersDB[1:6] 20:53:32.731-20:53:33.013 Get all users using GET method DDT Assertion"},{"id":3,"group":3,"content":"DDT\/14_DataDrivenStudentsAssertion[1:6]","start":1639581812731,"end":1639581813013,"title":"DDT\/14_DataDrivenStudentsAssertion[1:6] 20:53:32.731-20:53:33.013 Get all Students using GET method DDT Assertion"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
